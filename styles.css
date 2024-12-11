@@ -1,0 +1,270 @@
+/* Reset some basic elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #000000;
+}
+
+/* Header styles */
+header {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header .logo img {
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+header .nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Remove the default underline */
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative; /* Required for the custom hover effect */
+    padding-bottom: 5px; /* Space for the line */
+    transition: color 0.3s ease;
+}
+
+/* Create the cuboid effect on hover */
+.nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Height of the cuboid line */
+    background-color: #fff; /* Color of the line */
+    transform: scaleX(0); /* Start with no visible line */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+/* Animate the line on hover */
+.nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+/* Main section styles */
+main {
+    padding: 20px;
+}
+
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.welcome-text h2 {
+    font-size: 2rem;
+}
+
+.welcome-text .button {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.welcome-text p {
+    font-size: 1.2rem;
+}
+
+.welcome-image img {
+    width: 100%;
+    max-width: 500px;
+}
+/* General container styles for layout */
+.service-section {
+    display: flex; /* Align content side by side */
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Text content on the left side */
+.service-content {
+    flex: 1;
+    padding: 10px;
+    max-width: 50%;
+}
+
+.section {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #fff; /* Default background */
+    transition: all 0.3s ease;
+}
+
+.section:hover {
+    margin: 15px; /* Adjust as needed */
+}
+
+.section:hover {
+    transform: scale(1.05); /* Slightly enlarge the section */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add a shadow */
+    background-color: #f0f0f0; /* Change background color */
+}
+
+
+/* Video container on the right side */
+.video-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Smaller video player */
+.promo-video {
+    width: 300px; /* Set a smaller width */
+    height: 200px; /* Set a smaller height */
+    object-fit: contain;
+}
+
+
+/* Adjust button look */
+.button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #444;
+}
+
+/* Add responsive behavior */
+@media (max-width: 768px) {
+    .service-section {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    .promo-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+ /* Contact Form */
+ .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #000;
+    outline: none;
+}
+
+.contact-form button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #444;
+}
+
+.footer-content {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content .social-icons a {
+    margin: 0 8px;
+}
+
+.social-icons img {
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.social-icons a {
+    margin: 0 15px; /* Adjusts horizontal spacing between icons */
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px; /* Set uniform icon sizes */
+    height: 40px;
+    object-fit: contain; /* Prevent icons from being distorted */
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+    .welcome-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-section .promo-video {
+        max-width: 100%;
+    }
+
+    .contact-form {
+        padding: 15px;
+    }
+
+    header .nav a {
+        margin: 5px 0;
+    }
+}
+
